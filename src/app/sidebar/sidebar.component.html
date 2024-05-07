@@ -1,0 +1,18 @@
+
+  <div class=" mx-3 mt-4">
+    <a (click)="sidebartoggle()" routerLink="/home" class="list-group-item list-group-item-action py-2 ripple"
+      ><i class="fa-solid fa-house me-3"></i><span>Home</span></a
+    >
+    <a (click)="sidebartoggle()" routerLink="/home/register" class="list-group-item list-group-item-action py-2 ripple">
+        <i class="fa-solid fa-scroll me-3"></i><span>Complaint Register</span>
+    </a>
+    <a (click)="sidebartoggle()" routerLink="/home/viewticket" class="list-group-item list-group-item-action py-2 ripple"
+      ><i class="fa-sharp fa-solid fa-eye me-3"></i><span>View Ticket</span></a
+    >
+    <a (click)="sidebartoggle()" routerLink="/home/deleteaccount" class="list-group-item list-group-item-action py-2 ripple"
+      ><i class="fa-sharp fa-solid fa-eye me-3"></i><span>Delete My Account</span></a
+    >
+    <a (click)="sidebartoggle()" *ngIf="userviewstatus" routerLink="/home/userdetails" class="list-group-item list-group-item-action py-2 ripple"
+      ><i class="fa-sharp fa-solid fa-user-group me-3"></i><span>User Data</span></a
+    >
+  </div>

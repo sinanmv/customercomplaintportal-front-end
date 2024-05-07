@@ -1,0 +1,66 @@
+.bgcontain{
+    background: linear-gradient(rgba(1,1,1,0.7),rgba(1,1,1,0.7)), url('https://img.lovepik.com/background/20211021/large/lovepik-line-technology-background-image_500568907.jpg');
+    background-size: cover;
+    background-position: center;
+    letter-spacing: 30px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.maincontain{
+    background-color: rgb(255, 255, 255);
+    min-height: 100vh;
+}
+.card {
+    /* width: 190px;
+    height: 254px; */
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 10px 10px;
+    background: #07182E;
+    position: relative; 
+    overflow: hidden;
+    border-radius: 20px;
+  }
+  .card > div{
+    z-index: 1;
+    color: white;
+  }
+  
+  .card h2 {
+    z-index: 1;
+    color: white;
+  }
+  .card p {
+    z-index: 1;
+    color: white;
+  }
+ 
+  .card::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    background-image: linear-gradient(360deg, rgb(0, 183, 255), rgb(255, 48, 255));
+    height: 130%;
+    animation: rotBGimg 3s linear infinite;
+    transition: all 0.1s linear;
+  }
+  
+  @keyframes rotBGimg {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(180deg);
+    }
+  }
+  
+  .card::after {
+    content: '';
+    position: absolute;
+    background: #07182E;
+    ;
+    inset: 5px;
+    border-radius: 15px;
+  }  

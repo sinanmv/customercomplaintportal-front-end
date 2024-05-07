@@ -1,0 +1,160 @@
+<div class="bgcontain">
+    <div class="container">
+        <div *ngIf="alertdata" class="alert alert-success w-50 text-center " style="position: absolute;top: 70%;left: 25%;" role="alert">
+            {{alertdata}}
+          </div>
+        <div class="row pt-4">
+            <div class="col-12 main mt-5 rounded p-5">
+                <h1 class="text-center mb-5">View Ticket Details</h1>
+                <table class="border border-5 w-100">
+                    <tr class="border">
+                        <th class="border border-3 w-25 ps-1">Owner Name : </th>
+                        <td class="ps-1">{{ticketdetails.firstname}} {{ticketdetails.lastname}}</td>
+                    </tr>
+                    <tr class="border">
+                        <th class="border border-3 w-25 ps-1">Phone Number : </th>
+                        <td class="ps-1"><div>
+
+                            {{ticketdetails.phonenumber1}}
+                        </div>
+                        <div *ngIf="ticketdetails.phonenumber2 != 0">
+                            {{ticketdetails.phonenumber2}}
+                        </div>
+                        </td>
+                    </tr>
+                    <tr class="border">
+                        <th class="border border-3 w-25 ps-1">Address : </th>
+                        <td class="ps-1">{{ticketdetails.address}}</td>
+                    </tr>
+                    <tr class="border">
+                        <th class="border border-3 w-25 ps-1">Pin code : </th>
+                        <td class="ps-1">{{ticketdetails.pincode}}</td>
+                    </tr>
+                    <tr class="border">
+                        <th class="border border-3 w-25 ps-1">State</th>
+                        <td class="ps-1">{{ticketdetails.state}}</td>
+                    </tr>
+                    <tr class="border">
+                        <th class="border border-3 w-25 ps-1">Brand</th>
+                        <td class="ps-1">{{ticketdetails.brand}}</td>
+                    </tr>
+                    <tr class="border">
+                        <th class="border border-3 w-25 ps-1">Serial Number</th>
+                        <td class="ps-1">{{ticketdetails.serialnumber}}</td>
+                    </tr>
+                    <tr class="border">
+                        <th class="border border-3 w-25 ps-1">Purchase</th>
+                        <td class="ps-1">{{ticketdetails.purchasedate}}</td>
+                    </tr>
+                    <tr class="border">
+                        <th class="border border-3 w-25 ps-1">Invoice Number</th>
+                        <td class="ps-1">{{ticketdetails.invoiceno}}</td>
+                    </tr>
+                    <tr class="border">
+                        <th class="border border-3 w-25 ps-1">Product Compliant Description</th>
+                        <td class="ps-1">{{ticketdetails.productdescription}}</td>
+                    </tr>
+                    <tr class="border">
+                        <th class="border border-3 w-25 ps-1">Complaint Type</th>
+                        <td class="ps-1">{{ticketdetails.complainttype}}</td>
+                    </tr>
+                    <tr class="border">
+                        <th class="border border-3 w-25 ps-1">Damage Photo</th>
+                        <td class="ps-1"><img src="https://customer-complaint-portal.onrender.com/image/preview/{{ticketdetails.damagephoto}}" alt="" style="max-height: 400px; "></td>
+                    </tr>
+                    <tr class="border">
+                        <th class="border border-3 w-25 ps-1">Internal</th>
+                        <td class="ps-1">{{ticketdetails.internal}}</td>
+                    </tr>
+                    <tr class="border">
+                        <th class="border border-3 w-25 ps-1">Status</th>
+                        <td class="ps-1 text-success">{{ticketdetails.status}}</td>
+                    </tr>
+                </table>
+                <div class="row mt-5 text-center ">
+                    <div class="col-3">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#sendmessage">Send
+                            Message</button>
+                    </div>
+
+                    <div class="col-3">
+                        <button routerLink="/home/viewticket" class="btn btn-danger">Close</button>
+                    </div>
+                    <div class="col-3" *ngIf="role == 'admin'">
+                        <button  (click)="ticketclose()" class="btn btn-danger">Ticket Close</button>
+                    </div>
+                    <ng-container *ngIf="role == 'internal' && ticketdetails.internal != ' '">
+
+                        <div class="col-3" >
+                            <button (click)="solved()" class="btn btn-success">Solved</button>
+                        </div>
+                    </ng-container>
+                    <div class="col-3"  *ngIf="role == 'admin'">
+                        <button (click)="getinterndetails()" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#assigntointernal">Assign
+                            To Internal</button>
+                    </div>
+                    <!-- Modal  for internal assign code here-->
+                    <div class="modal fade mt-5" id="assigntointernal" data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Assign To Internal</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <select  [(ngModel)]="internalvalue" name="" id="" class="form-control form-control-lg">
+
+                                        <option *ngFor="let intern of internaldetails" value="{{intern.username}}">{{intern.username}}</option>
+                                        
+                                    </select>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button (click)="assigntointernal()" type="button" data-bs-dismiss="modal"   class="btn btn-primary">Assign</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal  send message-->
+                    <div class="modal fade mt-5" id="sendmessage" data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Message</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                   <textarea name="" id="" [(ngModel)]="messagedata" class="w-100" rows="5"></textarea>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" (click)="sendmessage()" class="btn btn-primary" data-bs-dismiss="modal">Send</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main" style="min-height: 100px">
+                <div class="row m-0 py-5 " *ngIf="ticketdetails.message && ticketdetails.message.length==0">
+                    <h4 class="text-center">No Message </h4>
+                </div>
+                <div class="row m-0 py-5" *ngIf="ticketdetails.message && ticketdetails.message.length!=0">
+                    <table class="w-50" >
+                        <tr *ngFor="let data of ticketdetails.message">
+                            <th class="w-25">{{data.username}}</th>
+                            <td>{{data.message}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

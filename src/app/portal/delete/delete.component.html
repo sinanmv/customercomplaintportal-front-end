@@ -1,0 +1,15 @@
+<div class="container mt-5">
+    <div class="row">
+        <div *ngIf="alertdata" class="alert alert-success w-50 text-center " style="position: absolute;top: 5%;left: 25%;" role="alert">
+            {{alertdata}}
+          </div>
+        <div class="col-4 pt-5">
+
+        </div>
+        <div class="text-center col-4 pt-5">
+            <h2 class="text-white">Enter Your Account Password</h2>
+            <input type="password" [(ngModel)]="pswd" class="form-control mt-3">
+            <button class="btn btn-danger mt-5" (click)="deleteaccount()">Delete My Account</button>
+        </div>
+    </div>
+</div>

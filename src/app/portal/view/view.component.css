@@ -1,0 +1,17 @@
+.bgcontain{
+    background-color: rgb(70 70 70);
+    /* height: 100vh; */
+    display: flex;
+    /* place-items: center; */
+    /* place-content: center; */
+}
+.main{
+    background-color: white;
+    box-shadow: inset 0px 0px 7px -2px black;
+    min-height: 400px;
+    margin: 20px 0px;
+}
+table > tr > *{
+   
+    padding: 10px 0px;
+}

@@ -1,0 +1,177 @@
+<section class="h-100 gradient-custom-2">
+    <div *ngIf="alertdata" class="alert alert-warning w-50 text-center "
+        style="position: absolute; bottom: 0%;left: 25%; z-index: 2;" role="alert">
+        {{alertdata}}
+    </div>
+    <form [formGroup]="registerForm" class="pt-5 pb-5" enctype="multipart/form-data" >
+        <!-- form -->
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <!-- left form code here -->
+                <div class="col-12">
+                    <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+                        <div class="card-body p-0">
+                            <div class="row g-0">
+                                <div class="col-lg-6">
+                                    <div class="p-5">
+                                        <h3 class="fw-normal mb-5" style="color: rgb(185, 1, 1);">Contact Infomation
+                                        </h3>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-4 pb-2">
+
+                                                <div class="form-outline">
+                                                    <input type="text" id="form3Examplev2" name="firstname"
+                                                        formControlName="firstName"
+                                                        class="form-control form-control-lg" />
+                                                    <!-- <input type="text" name="username" formControlName="username" placeholder="Username" class="form-group rounded p-2 w-100"> -->
+                                                    <label class="form-label" for="form3Examplev2">First name</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-4 pb-2">
+
+                                                <div class="form-outline">
+                                                    <input type="text" id="form3Examplev3" name="lastname"
+                                                        formControlName="lastName"
+                                                        class="form-control form-control-lg" />
+                                                    <label class="form-label" for="form3Examplev3">Last name</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-4 pb-2">
+                                            <div class="form-outline">
+                                                <input type="text" id="form3Examplev4" name="email"
+                                                    formControlName="email" class="form-control form-control-lg" />
+                                                <label class="form-label" for="form3Examplev4">Email</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-4 pb-2 mb-md-0 pb-md-0">
+
+                                                <div class="form-outline">
+                                                    <input type="text" id="form3Examplev5" name="phone1"
+                                                        formControlName="phone1" class="form-control form-control-lg" />
+                                                    <label class="form-label" for="form3Examplev5">Phone Number</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-4 pb-2 mb-md-0 pb-md-0">
+
+                                                <div class="form-outline">
+                                                    <input type="text" id="form3Examplev5" name="phone2"
+                                                        formControlName="phone2" class="form-control form-control-lg" />
+                                                    <label class="form-label" for="form3Examplev5">Phone Number 2
+                                                        (optional)</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class=" pb-2 mt-4">
+                                            <div class="form-outline">
+                                                <textarea name="address" id="" class="w-100 form-control" name="address"
+                                                    formControlName="address" rows="1"></textarea>
+                                                <label class="form-label" for="form3Examplev4">House name</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+
+                                            <div class="col-12 col-lg-6 mb-4 pb-2 mt-4">
+                                                <div class="form-outline">
+                                                    <input type="text" name="" id=""
+                                                        class="form-control form-control-lg" name="pincode"
+                                                        formControlName="pincode">
+                                                    <label class="form-label" for="form3Examplev4">Pin code</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-lg-6 mb-4 pb-2 mt-4">
+                                                <div class="form-outline">
+                                                    <input type="text" name="" id=""
+                                                        class="form-control form-control-lg" name="state"
+                                                        formControlName="state">
+                                                    <label class="form-label" for="form3Examplev4">state</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- porduct details code here -->
+                                <div class="col-lg-6 bg-indigo text-white">
+                                    <div class="p-5">
+                                        <h3 class="fw-normal mb-5">Product Details</h3>
+                                        <div class="mb-4 pb-2">
+                                            <div class="form-outline form-white">
+                                                <input type="text" id="form3Examplea2" name="brand"
+                                                    formControlName="brand" class="form-control form-control-lg" />
+                                                <label class="form-label" for="form3Examplea2">Brand</label>
+                                            </div>
+                                        </div>
+                                        <div class="mb-4 pb-2">
+                                            <div class="form-outline form-white">
+                                                <input type="text" id="form3Examplea3" name="serialnumber"
+                                                    formControlName="serialnumber"
+                                                    class="form-control form-control-lg" />
+                                                <label class="form-label" for="form3Examplea3">Serial number</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5 mb-4 pb-2">
+
+                                                <div class="form-outline form-white">
+                                                    <input type="date" id="form3Examplea4" name="purchasedate"
+                                                        formControlName="purchasedate"
+                                                        class="form-control form-control-lg" />
+                                                    <label class="form-label" for="form3Examplea4">Purchase Date</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-7 mb-4 pb-2">
+                                                <div class="form-outline form-white">
+                                                    <input type="text" id="form3Examplea5" name="invoice"
+                                                        formControlName="invoice"
+                                                        class="form-control form-control-lg" />
+                                                    <label class="form-label" for="form3Examplea5">Invoice No</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-4 pb-2">
+                                            <div class="form-outline form-white">
+                                                <input type="text" id="form3Examplea6" name="productdescription"
+                                                    formControlName="productdescription"
+                                                    class="form-control form-control-lg" />
+                                                <label class="form-label" for="form3Examplea6">Product Complaint
+                                                    Description</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5 mb-4 pb-2">
+                                                <div class="form-outline form-white">
+                                                    <select name="" id="" class="form-control form-control-lg"
+                                                        name="complaintType" formControlName="complaintType">
+                                                        <option value="">Select</option>
+                                                        <option value="display Issue">Display Issue</option>
+                                                        <option value="Battery Issue">Battery Issue</option>
+                                                        <option value="Software Issue">Software Issue</option>
+                                                        <option value="hardware Issue">Hardware Issue</option>
+                                                        <option value="Other">Other</option>
+                                                    </select>
+                                                    <label for="" class="form-label">Complaint type</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-7 mb-4 pb-2">
+                                                <div class="form-outline form-white">
+                                                    <input (change)="onFileChange($event)" type="file" class="form-control" name="file" >                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <button type="button" (click)="register()" class="btn btn-success btn-lg"
+                                            data-mdb-ripple-color="dark">Register</button>
+                                        <button type="button" routerLink="/home" class="btn btn-light ms-3 btn-lg"
+                                            data-mdb-ripple-color="dark">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>

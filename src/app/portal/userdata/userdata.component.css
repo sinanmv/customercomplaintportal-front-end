@@ -1,0 +1,8 @@
+.bgmain{
+    background-color: rgb(31, 31, 31);
+    min-height: 100vh;
+}
+.data{
+    box-shadow: inset 0px 0px 15px -3px black;
+    padding: 10px 10px;
+}

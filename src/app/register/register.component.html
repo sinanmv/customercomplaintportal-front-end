@@ -1,0 +1,68 @@
+<div class="bg">
+    <div *ngIf="alertdata" class="alert alert-success w-50 text-center " style="position: absolute; top: 1%;left: 25%;" role="alert">
+        {{alertdata}}
+      </div>
+    <div class="container logindesign">
+        <div class="row  d-flex justify-content-between">
+            <div class="col-12 col-md-5 loginbg rounded-3">
+                <form [formGroup]="registerForm" (ngSubmit)="register()" >
+                    <div class="container">
+                        <div class="row">
+                            <div class="pt-5 col-12 col-md-12">
+                                <input type="text" placeholder="Username" name="username" formControlName="username" class="form-group rounded p-2 w-100">
+                                <div *ngIf="this.registerForm.get('username')?.errors && this.registerForm.get('username')?.touched" class="text-danger">Invalid UserName</div>
+                            </div>
+                            <div class="pt-3 col-12 col-md-12">
+                                <input type="email" name="email" formControlName="email" placeholder="email" class="form-group rounded p-2 w-100">
+                                <div *ngIf="this.registerForm.get('email')?.errors && this.registerForm.get('email')?.touched" class="text-danger">Invalid Email Address</div>
+                            </div>
+                            <div class="pt-3 col-12 col-md-12">
+                                <input type="number" name="phonenumber" formControlName="phonenumber" placeholder="Phone Number" class="form-group rounded p-2 w-100">
+                                <div *ngIf="this.registerForm.get('phonenumber')?.errors && this.registerForm.get('phonenumber')?.touched" class="text-danger">Invalid phone number</div>
+                            </div>
+                            <div class="pt-3 col-12 col-md-12">
+                                <input type="password" name="password" formControlName="password" placeholder="password" class="form-group rounded p-2 w-100">
+                                <div *ngIf="this.registerForm.get('password')?.errors && this.registerForm.get('password')?.touched" class="text-danger">Invalid password</div>
+                            </div>
+                            <div class="pt-3 pb-5 col-12 col-md-12">
+                                <input type="password" name="repassword" formControlName="repassword" placeholder="Re-password" class="form-group rounded p-2 w-100">
+                                <div *ngIf="this.registerForm.get('repassword')?.errors && this.registerForm.get('repassword')?.touched" class="text-danger">Invalid re-password</div>
+                            </div>
+                           
+                        </div>
+                        <div class="row text-center">
+                            <div class="pb-5 col-12 col-md-12 fs-3 text-center ">
+                                <button class="btn fs-3" type="submit" style=" color: rgb(212, 170, 3);">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row text-light text-center">
+                            <p>Sign With</p>
+
+                        </div>
+                        <div class="row text-center d-flex justify-content-between">
+                            <p>
+                                <a href="#" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
+                                <a href="#" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
+                                <a href="#  " class="text-white"><i class="fab fa-google fa-lg"></i></a>
+                            </p>
+                        </div> 
+                        <div class="row mt-5 text-white text-center pb-5">
+                            <p>I Have Account</p> 
+                            <a routerLink="/login" class="text-decoration-none">Sign In</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-12 col-md-5">
+                <div class="ps-5 animate-charcter" style="margin-top: 30%">
+                    <h1 class="" style="font-size: 3.5rem;">Hi,</h1>
+                    <h2 style="font-size: 3rem;">New User</h2>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,53 @@
+<div class="bg">
+    <div class="container logindesign">
+        <div *ngIf="alertdata" class="alert alert-success w-50 text-center " style="position: absolute; top: 1%;left: 25%;" role="alert">
+            {{alertdata}}
+          </div>
+        <div class="row  d-flex justify-content-between">
+            <div class="col-12 col-md-5 mb-5">
+                <div class="ps-5 animate-charcter" style="margin-top: 30%">
+                    <h1 class="" style="font-size: 3.5rem;">Hi,</h1>
+                    <h2 style="font-size: 3rem;">May I Help You</h2>
+                </div>
+            </div>
+            <div class="col-12 col-md-5 loginbg rounded-3">
+                <form [formGroup]="loginForm" (ngSubmit)="login()">
+                    <div class="container">
+                        <div class="row">
+                            <div class="pt-5 col-12 col-md-12">
+                                <input type="text" name="username" formControlName="username" placeholder="Username" class="form-group rounded p-2 w-100">
+                            </div>
+                            <div class="pt-3 pb-5 col-12 col-md-12">
+                                <input type="password" placeholder="password" name="password" formControlName="password" class="form-group rounded p-2 w-100">
+                            </div>
+                           
+                        </div>
+                        <div class="row text-center">
+                            <div class="pb-5 col-12 col-md-12 fs-3 text-center ">
+                                <button class="btn fs-3" type="submit" style=" color: rgb(212, 170, 3);">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row text-light text-center">
+                            <p>Login With</p>
+
+                        </div>
+                        <div class="row text-center d-flex justify-content-between">
+                            <p>
+                                <a href="#" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
+                                <a href="#" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
+                                <a href="#  " class="text-white"><i class="fab fa-google fa-lg"></i></a>
+                            </p>
+                        </div> 
+                        <div class="row mt-5 text-white text-center pb-5">
+                            <p>I don't Have Account</p> 
+                            <a routerLink="/register" class="text-decoration-none">Sign Up</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

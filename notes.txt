@@ -1,0 +1,86 @@
+1.login
+2.register
+3.pagenotfound
+4.dashboard
+5.sidebar
+6.view ticket (user can only self registered ticket only | admin can  view all registered ticket)
+7.register ticket
+8.view user(edit/delete) for admin only
+-----------------------------------------------------
+
+user role:
+1.user
+2.admin
+3.internal
+
+--------------------------------------------------------
+sidebar:
+1.dashboard
+2.registered ticket
+3.view ticket
+4.user edit(for admin only)
+--------------------------------------------------------
+view ticket:
+
+    update option:
+        assign internal
+        update status
+        send notes
+
+ticket closed:
+ticket pending
+
+
+----------------------------------------------------------
+registered:
+serial number
+model
+owner name
+owner email
+owner phone
+secondary phone number
+purchase bill date  
+warrenty expire []yes []no
+
+product image
+product complaint type:
+    display damage
+    touch damage
+    battery issue
+    software issue
+    driver issue (wifi,sound,button)
+    camera issue
+    other
+
+product complaint description (optional)
+complaint start date:
+complaint end date:
+pickup address:
+
+submit[button]
+
+--------------------------------------------
+
+view ticket :
+
+details
+update status (only admin and internal)
+
+-------------------------------------------
+
+user data:
+
+user edit :
+    role change 
+    details change
+
+user delete:
+
+
+
+
+
+
+
+
+

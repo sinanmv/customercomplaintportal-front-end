@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'customercomplaintportal';
+  navbarCollapseStatus = false
+  sidebar:boolean=false
+  sidebartoggle(){
+    this.sidebar = !this.sidebar
+  }
+  navbarcollapse(){
+    console.log(
+      "worked"
+    );
+    
+    this.navbarCollapseStatus = !this.navbarCollapseStatus
+  }
 }

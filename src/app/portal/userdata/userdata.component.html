@@ -1,0 +1,29 @@
+<div class="bgmain">
+    <h1 class="text-center text-white pt-5 pb-5" style="background-color: rgb(31, 31, 31);">User Details</h1>
+    <div class="container" *ngFor="let data of userdata">
+        <div class="row mt-4">
+            <div class="col-12 px-5 d-flex border border-3 rounded rounded-3 bg-light data">
+                <div class="col col-md-3 mt-3">
+                    <h5>name : </h5>
+                    <p>{{data.username}}</p>
+                </div>
+                <div class="col col-md-4 mt-3">
+                    <h5>Email : </h5>
+                    <p>{{data.email}}</p>
+                </div>
+                
+
+                    <div class="col col-md-3 mt-3">
+                        <h5>Role </h5>
+                        <p>{{data.role}}</p>
+                    </div>
+                    <div class="col col-md-2">
+                        <a routerLink="edit/{{data._id}}" class="btn btn-success my-4 form-control "><i
+                                class="fa-solid fa-user-pen"></i> Edit</a>
+                        
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

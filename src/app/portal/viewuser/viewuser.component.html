@@ -1,0 +1,53 @@
+<div class="bgmain">
+  <div *ngIf="alertdata" class="alert alert-success w-50 text-center " style="position: absolute;top: 1%;left: 25%;" role="alert">
+    {{alertdata}}
+  </div>
+  <h1 class="text-center text-white" style="padding-top: 80px;">User Details Edit</h1>
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-12 px-5 d-flex justify-content-between border border-3 rounded rounded-3 bg-light data">
+        <table class="w-75">
+          <tr class="">
+            <th>User Name</th>
+            <td><input type="text" [(ngModel)]="userdata.username" class="form-control my-2" placeholder="user name">
+            </td>
+
+
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td><input type="text" [(ngModel)]="userdata.email" class="form-control my-2" placeholder="user name"></td>
+          </tr>
+          <tr>
+            <th>Phone Number</th>
+            <td><input type="text" [(ngModel)]="userdata.phonenumber" class="form-control my-2 "
+                placeholder="user name"></td>
+          </tr>
+          <tr>
+            <th>Password</th>
+            <td><input type="Password" [(ngModel)]="userdata.password" class="form-control my-2 "
+                placeholder="password"></td>
+          </tr>
+          <tr>
+            <th>Role</th>
+            <td>
+              <select name="" id="" [(ngModel)]="userdata.role" class="form-control my-2">
+                <option value="admin">Admin</option>
+                <option value="internal">internal</option>
+                <option value="user">user</option>
+              </select>
+            </td>
+          </tr>
+
+        </table>
+        <div class="col-3 ms-3">
+          <a (click)="submitchange()" class="btn btn-danger w-100 my-3">Submit</a>
+          <a (click)="deleteaccount()" class="btn btn-danger w-100 my-3">Delete this Account</a>
+          <a routerLink="/home/userdetails" class="btn btn-secondary w-100 my-3">Close</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
